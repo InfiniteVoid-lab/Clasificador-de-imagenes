@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificador de Noticias</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="prueba.js" defer></script>
+</head>
+<body>
+    <div class="contenedor-principal">
+        <!-- Contenedor para inputs -->
+        <div class="contenedor-inputs">
+            <div class="input-group">
+                <button onclick="showSection('text')" class="active">📝 Texto</button>
+                <button onclick="showSection('url')">🌐 URL</button>
+                <button onclick="showSection('file')">📁 Archivo</button>
+            </div>
+
+            <!-- Sección de texto dentro del contenedor -->
+            <div id="text" class="input-section" style="display: block;">
+                <div class="caja-texto">
+                    <textarea id="textInput" rows="8" placeholder="Pega aquí el texto de la noticia..."></textarea>
+                    <button onclick="analizarContenido('text')">Clasificar</button>
+                </div>
+            </div>
+
+            <!-- Sección de URL -->
+            <div id="url" class="input-section" style="display: none;">
+                <div class="caja-texto">
+                    <input type="text" id="urlInput" placeholder="Introduce la URL de la noticia...">
+                    <button onclick="analizarContenido('url')">Clasificar</button>
+                </div>
+            </div>
+
+            <!-- Sección de archivo -->
+            <div id="file" class="input-section" style="display: none;">
+                <div class="caja-texto">
+                    <input type="file" id="fileInput">
+                    <button onclick="analizarContenido('file')">Clasificar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenedor para los resultados -->
+        <div id="result" class="contenedor-resultados">
+            Aquí aparecerá la categoría de la noticia
+        </div>
+    </div>
+</body>
+</html>
